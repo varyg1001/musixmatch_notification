@@ -1,0 +1,5 @@
+topic = "" # Telegram topic ID (optional)
+id = "" # Telegram chat ID 
+token = "" # Telegram bot token
+sleep = 1800 # Sleep time in seconds (default: 30 minutes)
+languages_to_get = "hu" # u0,hu,en
