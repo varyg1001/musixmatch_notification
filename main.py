@@ -13,7 +13,7 @@ from urllib.parse import unquote, urlencode, urlparse
 
 import requests
 
-from config import id, sleep, token, topic, languages_to_get
+from config import chat_id, sleep, token, topic, languages_to_get
 
 logging.basicConfig(level=logging.INFO)
 
@@ -24,7 +24,7 @@ def send_notification(msg):
         params = {
             "text": msg,
             **({"message_thread_id": TOPIC} if TOPIC else {}),
-            "chat_id": ID,
+            "chat_id": CHAT_ID,
             "parse_mode": "html",
             "disable_web_page_preview": True,
         }
@@ -234,7 +234,7 @@ def main():
 
 
 if __name__ == "__main__":
-    ID = id
+    CHAT_ID = chat_id
     TOPIC = topic
     TOKEN = token
     SLEEP = sleep
