@@ -210,7 +210,7 @@ def main():
                             "appId": "web-desktop-app-v1.0",
                             "missionId": item["missionId"],
                             "userToken": user_token,
-                            "languages": "hu",  # u0,hu,en
+                            "languages": LANGUAGE_TO_GET,  # u0,hu,en
                         },
                         "query": 'query LyricsList($appId: String, $languages: String, $destinationLanguage: String, $limit: Int = 25, $missionId: String, $nextToken: String = null, $sortAscending: Boolean = true, $sortBy: String = "rank", $status: String = "AVAILABLE", $userToken: String) {\n  getSortedLyrics(appId: $appId, languages: $languages, destinationLanguage: $destinationLanguage, limit: $limit, missionId: $missionId, nextToken: $nextToken, sortForward: $sortAscending, sortBy: $sortBy, status: $status, userToken: $userToken) {\n    items {\n      id\n      actionURI\n      artistName\n      commonTrackId\n      hasLyrics\n      hasSync\n        lastUpdated\n      language\n      missionId\n      publishedStatusMacro\n      rank\n      status\n      title\n      trackLength\n      trackLengthMs\n      destinationLanguage\n      __typename\n    }\n    nextToken\n    __typename\n  }\n}\n',
                     },
